@@ -180,7 +180,7 @@ namespace SalesWinApp
             try
             {
                 if (txtSearchByPrice.Text.Trim().Length < 1) throw new Exception("Please input something to search");
-                decimal price = decimal.Parse(txtSearchID.Text.Trim());
+                decimal price = decimal.Parse(txtSearchByPrice.Text.Trim());
                 target = productDao.SearchbyPrice(price);
             }
             catch (Exception ex)
@@ -236,7 +236,7 @@ namespace SalesWinApp
             var target = new List<TblProduct>();
             try
             {
-                if (txtSearchName.Text.Trim().Length < 1) throw new Exception("Please input something to search");
+                if (txtUnitInStockSearch.Text.Trim().Length < 1) throw new Exception("Please input something to search");
                 int stock = int.Parse(txtUnitInStockSearch.Text.Trim());
                 target = productDao.SearchbyStock(stock);
             }

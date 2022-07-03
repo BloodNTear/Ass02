@@ -174,9 +174,15 @@ namespace SalesWinApp
                 if (txtUnitPrice.Text.Length < 0) throw new Exception("Empty Price");
 
                     order.MemberId = int.Parse(cboMemberID.SelectedValue.ToString());
+                    try
+                {
                     order.OrderDate = DateTime.Parse(orderDate.Text.Trim());
                     order.ShippedDate = DateTime.Parse(shippedDate.Text.Trim());
                     order.RequiredDate = DateTime.Parse(requireDate.Text.Trim());
+                } catch(Exception ex)
+                {
+
+                }
                     
                 try
                 {
